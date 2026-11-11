@@ -1,0 +1,21 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Sistema operacional / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Modelos binários baixados dinamicamente (se aplicável)
+*.task
