@@ -20,5 +20,7 @@ Thumbs.db
 # Modelos binários baixados dinamicamente (se aplicável)
 *.task
 
+
 .coverage
 htmlcov/
+

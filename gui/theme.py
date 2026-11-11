@@ -1,0 +1,31 @@
+"""Tokens visuais e estilos inspirados no design do macOS."""
+
+# Cores Principais macOS (Light / Dark)
+MACOS_ACCENT_BLUE = ("#007AFF", "#0A84FF")
+MACOS_ACCENT_BLUE_HOVER = ("#0062CC", "#0071E3")
+
+MACOS_GREEN = ("#34C759", "#30D158")
+MACOS_AMBER = ("#FF9500", "#FF9F0A")
+MACOS_RED = ("#FF3B30", "#FF453A")
+MACOS_GRAY_TEXT = ("#8E8E93", "#98989D")
+
+# Superfícies e Janelas
+MACOS_WINDOW_BG = ("#F5F5F7", "#1E1E1E")
+MACOS_SIDEBAR_BG = ("#E8E8ED", "#252528")
+MACOS_CARD_BG = ("#FFFFFF", "#2C2C2E")
+MACOS_CARD_BORDER = ("#E5E5EA", "#3A3A3C")
+
+# Botão Secundário / Padrão (estilo "Use as Defaults")
+MACOS_BTN_SECONDARY_BG = ("#FFFFFF", "#3A3A3C")
+MACOS_BTN_SECONDARY_BORDER = ("#C7C7CC", "#48484A")
+MACOS_BTN_SECONDARY_TEXT = ("#1C1C1E", "#F2F2F7")
+MACOS_BTN_SECONDARY_HOVER = ("#E5E5EA", "#48484A")
+
+# Divisores sutis
+MACOS_DIVIDER_COLOR = ("#D1D1D6", "#38383A")
+
+# Geometria e Raios de Borda macOS
+CORNER_RADIUS_BUTTON = 7
+CORNER_RADIUS_CARD = 10
+CORNER_RADIUS_CHECKBOX = 4
+CORNER_RADIUS_OPTION = 6
