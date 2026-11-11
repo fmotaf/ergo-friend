@@ -159,3 +159,4 @@ def test_recurrence_smoother_invalid_alpha():
         RecurrenceSmoother(alpha=0.0)
     with pytest.raises(ValueError):
         RecurrenceSmoother(alpha=1.5)
+

@@ -242,3 +242,4 @@ class RecurrenceSmoother:
         """Reinicia o estado da relação de recorrência."""
         self.current_value = None
         self.step_count = 0
+
