@@ -133,11 +133,16 @@ Responsável pelas operações vetoriais e matriciais, implementado com **NumPy*
 ---
 
 ### 3.4. Módulo de Interface com Estilo macOS (`gui/app_window.py`)
-Construído com **CustomTkinter** seguindo as diretrizes de design visual do ecossistema macOS:
-- **Estética Visual**:
-  - Janela com cantos suaves e padding generoso.
-  - Suporte nativo a Dark Mode / Light Mode com paleta de cores neutra (tons de cinza chumbo `#1E1E1E`, superfícies `#2A2A2A`, acentos sutis em azul `#007AFF` e alertas em âmbar `#FF9500` / vermelho `#FF3B30`).
-  - Tipografia limpa (Segoe UI / SF Pro compatível).
+Construído com **CustomTkinter** seguindo as diretrizes de componentes e controles visuais do ecossistema macOS (conforme referência de painéis de configuração / inspetores do macOS):
+- **Estética de Controles e Componentes**:
+  - Janela padrão do sistema operacional (sem necessidade de emular botões de minimizar/fechar no canto superior).
+  - **Botões com Estilo macOS**: botões com cantos arredondados suaves (`corner_radius=6` a `8`), bordas sutis, preenchimento neutro elegante para ações secundárias e destaque em azul macOS (`#007AFF`) para ações primárias.
+  - **Controles de Formulário e Seleção**: caixas de seleção (checkboxes) e menus suspensos com visual limpo, bordas sutis e fundo translúcido/cinza claro característicos.
+  - **Paleta de Cores macOS**:
+    - Fundo de painel e cards: `#ECECEC` / `#F5F5F7` (modo claro) ou `#1E1E1E` / `#2A2A2A` (modo escuro).
+    - Cor de destaque (Accent): `#007AFF` (Azul macOS).
+    - Status de atenção/erro: Âmbar `#FF9500` e Vermelho `#FF3B30`.
+    - Divisores suaves e tipografia nítida (SF Pro / Segoe UI / Helvetica).
 - **Layout em Duas Seções**:
   1. **Barra Lateral (Sidebar / Control Bar)**:
      - Logo e status da aplicação.
@@ -214,3 +219,4 @@ Conforme a estratégia de melhorias incrementais solicitada:
 3. **Parte 3:**
    - Desenvolvimento da interface visual em CustomTkinter no estilo macOS (`gui/`) e alertas sonoros assíncronos (`alerts/`).
    - Teste ponta a ponta e entrega final.
+

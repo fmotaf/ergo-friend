@@ -103,6 +103,10 @@ def calculate_neck_angle(nose: Point2D, left_shoulder: Point2D, right_shoulder: 
     m_s = midpoint(left_shoulder, right_shoulder)
     v_n = vector_between(m_s, nose)
 
+    # Se o vetor é nulo (pontos coincidentes / degenerescência), retorna zero
+    if np.linalg.norm(v_n) == 0.0:
+        return 0.0, 0.0
+
     # Vertical apontando para cima no sistema de imagem
     u_v = np.array([0.0, -1.0], dtype=np.float64)
 
@@ -226,14 +230,23 @@ class RecurrenceSmoother:
         self.step_count: int = 0
 
     def update(self, measured_value: float) -> float:
-        """Executa um passo da relação de recorrência com o novo valor medido."""
+        """Executa um passo da relação de recorrência com o novo valor medido.
+
+        Tratamento de Edge Cases:
+            Se o valor medido for NaN ou infinito (devido a falhas de frame/tracking),
+            a medição corrompida é descartada para evitar envenenamento do estado interno.
+        """
+        val = float(measured_value)
+        if np.isnan(val) or np.isinf(val):
+            return self.current_value if self.current_value is not None else 0.0
+
         if self.current_value is None:
             # Caso Base: theta_0 = theta_0^{med}
-            self.current_value = float(measured_value)
+            self.current_value = val
         else:
             # Relação de Recorrência: theta_n = alpha * med + (1 - alpha) * theta_{n-1}
             self.current_value = (
-                self.alpha * float(measured_value) + (1.0 - self.alpha) * self.current_value
+                self.alpha * val + (1.0 - self.alpha) * self.current_value
             )
         self.step_count += 1
         return self.current_value
@@ -242,3 +255,4 @@ class RecurrenceSmoother:
         """Reinicia o estado da relação de recorrência."""
         self.current_value = None
         self.step_count = 0
+
